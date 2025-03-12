@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 
 app.get("/ping",(req,res)=>{
-    resizeBy.send("pong!");
+    res.send("pong!");
 })
 
 app.listen(8080,()=>{
