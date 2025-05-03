@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB connection
-const mongoURI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/shoesDB";
+const mongoURI = process.env.MONGO_URI || "mongodb+srv://satyaemailid2007:5QjZaMSmKoPXQcTK@cluster0.dgkcspy.mongodb.net/"; // Replace with your MongoDB URI
 mongoose
   .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connected to MongoDB"))
@@ -25,7 +25,7 @@ const shoeSchema = new mongoose.Schema({
 const Shoe = mongoose.model("Shoe", shoeSchema);
 
 // GET request to check if the server is alive
-app.get("/ping", (req, res) => {
+app.get("/", (req, res) => {
   res.send("pong!");
 });
 
@@ -52,7 +52,8 @@ app.get("/get", async (req, res) => {
   }
 });
 
-// Read a single shoe by ID
+
+
 app.get("/get/:id", async (req, res) => {
   try {
     const shoe = await Shoe.findById(req.params.id);
@@ -65,7 +66,8 @@ app.get("/get/:id", async (req, res) => {
   }
 });
 
-// Update a shoe by ID
+
+
 app.put("/put/:id", async (req, res) => {
   try {
     const updatedShoe = await Shoe.findByIdAndUpdate(req.params.id, req.body, {
@@ -80,6 +82,8 @@ app.put("/put/:id", async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
+
+
 
 // Delete a shoe by ID
 app.delete("/delete/:id", async (req, res) => {
