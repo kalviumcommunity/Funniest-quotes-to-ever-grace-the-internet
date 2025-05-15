@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "Funniest-quotes-to-ever-grace-the-internet",
+			"path": "../../../../../Funniest-quotes-to-ever-grace-the-internet"
+		},
+		{
+			"name": "frontend",
+			"path": "../.."
+		},
+		{
+			"name": "backend",
+			"path": "../../../backend"
+		}
+	],
+	"settings": {}
+}

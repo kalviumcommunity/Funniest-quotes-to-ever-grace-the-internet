@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "ASAP_list_of_animal_school",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
