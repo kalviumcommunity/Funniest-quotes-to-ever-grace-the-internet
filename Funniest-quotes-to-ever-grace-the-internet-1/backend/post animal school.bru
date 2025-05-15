@@ -1,0 +1,19 @@
+meta {
+  name: post animal school
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/animal-school
+  body: json
+  auth: inherit
+}
+
+body:json {
+   {
+      "name": "Wildlife Academy",
+      "location": "Amazon Rainforest",
+      "animals": ["Jaguar", "Macaw", "Capybara"]
+    }
+}
