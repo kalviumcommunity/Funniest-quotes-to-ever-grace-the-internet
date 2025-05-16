@@ -9,7 +9,7 @@ const Login = ({ setToken, setUserId }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8080/login", { email, password });
+      const res = await axios.post("http://localhost:8080/login", { email, password },{ withCredentials: true });
       setToken(res.data.token);
       setUserId(res.data.userId);
       // Save to localStorage

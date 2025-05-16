@@ -24,7 +24,7 @@ const AnimalSchoolCard = ({ animalSchool, getSchoolData }) => {
         name: name.trim(),
         location: location.trim(),
         animals: animals.map(a => a.trim())
-      });
+      },{ withCredentials: true });
 
       alert("Updated successfully");
       getSchoolData();
@@ -39,7 +39,7 @@ const AnimalSchoolCard = ({ animalSchool, getSchoolData }) => {
     if (!window.confirm("Are you sure you want to delete this school?")) return;
 
     try {
-      await axios.delete(`http://localhost:8080/animal-school/${animalSchool._id}`);
+      await axios.delete(`http://localhost:8080/animal-school/${animalSchool._id}`,{ withCredentials: true });
       alert("Deleted successfully");
       getSchoolData();
     } catch (error) {

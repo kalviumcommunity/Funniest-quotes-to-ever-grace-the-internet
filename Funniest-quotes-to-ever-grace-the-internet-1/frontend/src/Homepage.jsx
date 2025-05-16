@@ -8,18 +8,18 @@ const Homepage = () => {
   const [selectedUser, setSelectedUser] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:8080/animal-school/users")
+    axios.get("http://localhost:8080/animal-school/users",{ withCredentials: true })
       .then(res => setUsers(res.data))
       .catch(() => setUsers([]));
   }, []);
 
   useEffect(() => {
     if (selectedUser) {
-      axios.get(`http://localhost:8080/animal-school/by-user/${selectedUser}`)
+      axios.get(`http://localhost:8080/animal-school/by-user/${selectedUser}`,{ withCredentials: true })
         .then(res => setSchool(res.data))
         .catch(() => setSchool([]));
     } else {
-      axios.get("http://localhost:8080/animal-school")
+      axios.get("http://localhost:8080/animal-school",{ withCredentials: true })
         .then(res => setSchool(res.data))
         .catch(() => setSchool([]));
     }

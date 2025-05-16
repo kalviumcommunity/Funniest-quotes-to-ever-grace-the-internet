@@ -30,6 +30,7 @@ const AddAnimalSchool = () => {
         'http://localhost:8080/animal-school',
         { name, location, animals },
         { headers: { Authorization: `Bearer ${token}` } }
+        ,{ withCredentials: true }
       );
 
       setMessage(response.data.message);
